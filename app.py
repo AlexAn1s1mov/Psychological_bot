@@ -7,7 +7,6 @@ async def on_startup(dp):
 
     from loader import db
     from handlers.utils.db_api.db_TelegramBot import on_startup
-    import aioschedule
     print('Подключение к PostgreSQL')
     await on_startup(dp)
 

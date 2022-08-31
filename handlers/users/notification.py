@@ -1,12 +1,10 @@
-from aiogram import types
 
-from handlers.utils.db_api.quick_commands import select_all_users
 from loader import dp, bot
 from handlers.utils.db_api import quick_commands as commands
-from aiogram import Dispatcher
+
 import asyncio
 import aioschedule
-from data.config import admins
+
 
 @dp.message_handler()
 async def notice():
