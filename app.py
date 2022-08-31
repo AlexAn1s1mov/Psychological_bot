@@ -1,7 +1,13 @@
+import asyncio
+
+from handlers.users.notification import scheduler
+
+
 async def on_startup(dp):
 
     from loader import db
     from handlers.utils.db_api.db_TelegramBot import on_startup
+    import aioschedule
     print('Подключение к PostgreSQL')
     await on_startup(dp)
 
@@ -14,6 +20,8 @@ async def on_startup(dp):
 
     from handlers.utils.set_bot_commands import set_default_commands
     await set_default_commands(dp)
+
+    asyncio.create_task(scheduler())
 
     print('Bot activated')
 
