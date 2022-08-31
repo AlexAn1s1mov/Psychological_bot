@@ -18,13 +18,21 @@ from states.test_11_states import test_11
 cnt = 0
 name = 'test11'
 
-@dp.message_handler(text='Тест 11')
+@dp.message_handler(text='Тест жизнестойкости')
 async def test11_e(message: types.Message):
     await message.answer(f'Тест "{about_tests[name]["name"]}"')
     await message.answer(f'О тесте: {about_tests[name]["info"]}')
 
     await message.answer(f'В тесте {len(about_tests[name]["questions"])} вопросов \n'
                          f'Приступить к тесту?', reply_markup=test11_enter)
+
+@dp.message_handler(text='Прервать прохождение теста', state='*')
+async def test11_answers_end(message: types.Message, state: FSMContext):
+    global cnt
+    cnt = 0
+    test_11.answer24
+    await message.answer(f'Тест прерван', reply_markup=kb_test)
+    await state.finish()
 
 @dp.message_handler(text='Приступить к тесту 11')
 async def test11_answers(message: types.Message):

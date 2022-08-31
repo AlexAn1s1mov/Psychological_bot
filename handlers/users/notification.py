@@ -1,4 +1,4 @@
-
+"""""
 from loader import dp, bot
 from handlers.utils.db_api import quick_commands as commands
 
@@ -18,3 +18,4 @@ async def scheduler():
     while True:
         await aioschedule.run_pending()
         await asyncio.sleep(1)
+"""""

@@ -2,25 +2,19 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 kb_test = ReplyKeyboardMarkup(
     keyboard=[
-        [
-            KeyboardButton(text='Тест 1'),
-            KeyboardButton(text='Тест 2'),
-            KeyboardButton(text='Тест 3'),
-            KeyboardButton(text='Тест 4')
-        ],
-        [
-            KeyboardButton(text='Тест 5'),
-            KeyboardButton(text='Тест 6'),
-            KeyboardButton(text='Тест 7'),
-            KeyboardButton(text='Тест 8')
-        ],
-        [
-            KeyboardButton(text='Тест 9'),
-            KeyboardButton(text='Тест 10'),
-            KeyboardButton(text='Тест 11'),
-            KeyboardButton(text='Тест 12'),
-            KeyboardButton(text='Тест 13')
-        ],
+        [KeyboardButton(text='Тест на канал восприятия')],
+        [KeyboardButton(text='Оценка уровня реактивной и личностной тревожности')],
+        [KeyboardButton(text='Диагностика психических состояний и свойств личности')],
+        [KeyboardButton(text='Опросник «САН»')],
+        [KeyboardButton(text='Теста Г. Айзенка')],
+        [KeyboardButton(text='Шкала позитивного и негативного аффекта')],
+        [KeyboardButton(text='Шкалы депрессии, тревоги и стресса')],
+        [KeyboardButton(text='Шкала самооценки')],
+        [KeyboardButton(text='Тест самообладания')],
+        [KeyboardButton(text='Методика «Спектр психического здоровья»')],
+        [KeyboardButton(text='Тест жизнестойкости')],
+        [KeyboardButton(text='Шкала отчуждения от учебы и выгорания')],
+        [KeyboardButton(text='Шкала субъективного счастья и удовлетворенности жизнью')],
         [
             KeyboardButton(text='/menu')
         ]

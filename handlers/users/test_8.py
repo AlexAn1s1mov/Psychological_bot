@@ -18,13 +18,21 @@ from states.test_8_states import test_8
 cnt = 0
 name = 'test8'
 
-@dp.message_handler(text='Тест 8')
+@dp.message_handler(text='Шкала самооценки')
 async def test8_e(message: types.Message):
     await message.answer(f'Тест "{about_tests[name]["name"]}"')
     await message.answer(f'О тесте: {about_tests[name]["info"]}')
 
     await message.answer(f'В тесте {len(about_tests[name]["questions"])} вопросов \n'
                          f'Приступить к тесту?', reply_markup=test8_enter)
+
+@dp.message_handler(text='Прервать прохождение теста', state='*')
+async def test8_answers_end(message: types.Message, state: FSMContext):
+    global cnt
+    cnt = 0
+    test_8.answer10
+    await message.answer(f'Тест прерван', reply_markup=kb_test)
+    await state.finish()
 
 @dp.message_handler(text='Приступить к тесту 8')
 async def test8_answers(message: types.Message):
