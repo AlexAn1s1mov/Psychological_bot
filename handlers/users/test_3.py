@@ -30,7 +30,6 @@ async def test3_e(message: types.Message):
 async def test3_answers_end(message: types.Message, state: FSMContext):
     global cnt
     cnt = 0
-    test_3.answer20
     await message.answer(f'Тест прерван', reply_markup=kb_test)
     await state.finish()
 
