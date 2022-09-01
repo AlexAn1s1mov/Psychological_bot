@@ -3,7 +3,6 @@ from .help import dp
 from .hello import dp
 from .menu import dp
 from .tests import dp
-#from .notification import dp
 from .test_1 import dp
 from .test_2 import dp
 from .test_3 import dp

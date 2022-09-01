@@ -26,7 +26,7 @@ async def test11_e(message: types.Message):
     await message.answer(f'В тесте {len(about_tests[name]["questions"])} вопросов \n'
                          f'Приступить к тесту?', reply_markup=test11_enter)
 
-@dp.message_handler(text='Прервать прохождение теста', state='*')
+@dp.message_handler(text='Прервать прохождение теста 11', state='*')
 async def test11_answers_end(message: types.Message, state: FSMContext):
     global cnt
     cnt = 0

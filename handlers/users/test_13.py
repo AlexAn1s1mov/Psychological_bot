@@ -10,7 +10,6 @@ from keyboards.default.keyboard_test_enter import *
 from psy_tests.psycho_tests import *
 from psy_tests.scores import *
 
-
 from loader import dp
 
 from states.test_13_states import test_13
@@ -26,8 +25,7 @@ async def test13_e(message: types.Message):
     await message.answer(f'В тесте {len(about_tests[name]["questions"])} вопросов \n'
                          f'Приступить к тесту?', reply_markup=test13_enter)
 
-
-@dp.message_handler(text='Прервать прохождение теста', state='*')
+@dp.message_handler(text='Прервать прохождение теста 13', state='*')
 async def test13_answers_end(message: types.Message, state: FSMContext):
     global cnt
     cnt = 0
@@ -207,7 +205,7 @@ async def state9(message: types.Message, state: FSMContext):
         string = 'answer' + f'{i + 1}'
         list.append(data[string])
 
-    id_ = message.from_user.id+13
+    id_ = message.from_user.id + 1
     await tests_results.new_result(id=id_,
                                    user_id=message.from_user.id,
                                    test_number=name,
@@ -217,9 +215,8 @@ async def state9(message: types.Message, state: FSMContext):
     await tests_results.update_result(id=id_, results=test13_score(list))
 
     await message.answer(f'{test13_score(list)}', reply_markup=kb_test)
-    cnt=0
+    cnt = 0
     await state.finish()
-
 
 
 

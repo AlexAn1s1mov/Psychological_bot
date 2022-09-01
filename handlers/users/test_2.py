@@ -27,7 +27,7 @@ async def test2_e(message: types.Message):
     await message.answer(f'В тесте {len(about_tests[name]["questions"])} вопросов \n'
                          f'Приступить к тесту?', reply_markup=test2_enter)
 
-@dp.message_handler(text='Прервать прохождение теста', state='*')
+@dp.message_handler(text='Прервать прохождение теста 2', state='*')
 async def test2_answers_end(message: types.Message, state: FSMContext):
     global cnt
     cnt = 0
@@ -44,7 +44,7 @@ async def test2_answers(message: types.Message):
     await test_2.first()
 
 @dp.message_handler(state=test_2.answer1)
-async def state1(message: types.Message, state: FSMContext):
+async def test2_state1(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -62,7 +62,7 @@ async def state1(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer2)
-async def state2(message: types.Message, state: FSMContext):
+async def test2_state2(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -80,7 +80,7 @@ async def state2(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer3)
-async def state3(message: types.Message, state: FSMContext):
+async def test2_state3(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -98,7 +98,7 @@ async def state3(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer4)
-async def state4(message: types.Message, state: FSMContext):
+async def test2_state4(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -116,7 +116,7 @@ async def state4(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer5)
-async def state5(message: types.Message, state: FSMContext):
+async def test2_state5(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -134,7 +134,7 @@ async def state5(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer6)
-async def state6(message: types.Message, state: FSMContext):
+async def test2_state6(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -152,7 +152,7 @@ async def state6(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer7)
-async def state7(message: types.Message, state: FSMContext):
+async def test2_state7(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -170,7 +170,7 @@ async def state7(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer8)
-async def state8(message: types.Message, state: FSMContext):
+async def test2_state8(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -188,7 +188,7 @@ async def state8(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer9)
-async def state9(message: types.Message, state: FSMContext):
+async def test2_state9(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -206,7 +206,7 @@ async def state9(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer10)
-async def state10(message: types.Message, state: FSMContext):
+async def test2_state10(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -224,7 +224,7 @@ async def state10(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer11)
-async def state11(message: types.Message, state: FSMContext):
+async def test2_state11(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -242,7 +242,7 @@ async def state11(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer12)
-async def state12(message: types.Message, state: FSMContext):
+async def test2_state12(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -260,7 +260,7 @@ async def state12(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer13)
-async def state13(message: types.Message, state: FSMContext):
+async def test2_state13(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -278,7 +278,7 @@ async def state13(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer14)
-async def state14(message: types.Message, state: FSMContext):
+async def test2_state14(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -296,7 +296,7 @@ async def state14(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer15)
-async def state15(message: types.Message, state: FSMContext):
+async def test2_state15(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -314,7 +314,7 @@ async def state15(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer16)
-async def state16(message: types.Message, state: FSMContext):
+async def test2_state16(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -332,7 +332,7 @@ async def state16(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer17)
-async def state17(message: types.Message, state: FSMContext):
+async def test2_state17(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -350,7 +350,7 @@ async def state17(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer18)
-async def state18(message: types.Message, state: FSMContext):
+async def test2_state18(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -368,7 +368,7 @@ async def state18(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer19)
-async def state19(message: types.Message, state: FSMContext):
+async def test2_state19(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -386,7 +386,7 @@ async def state19(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer20)
-async def state20(message: types.Message, state: FSMContext):
+async def test2_state20(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -404,7 +404,7 @@ async def state20(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer21)
-async def state21(message: types.Message, state: FSMContext):
+async def test2_state21(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -422,7 +422,7 @@ async def state21(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer22)
-async def state22(message: types.Message, state: FSMContext):
+async def test2_state22(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -440,7 +440,7 @@ async def state22(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer23)
-async def state23(message: types.Message, state: FSMContext):
+async def test2_state23(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -458,7 +458,7 @@ async def state23(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer24)
-async def state24(message: types.Message, state: FSMContext):
+async def test2_state24(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -476,7 +476,7 @@ async def state24(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer25)
-async def state25(message: types.Message, state: FSMContext):
+async def test2_state25(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -494,7 +494,7 @@ async def state25(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer26)
-async def state26(message: types.Message, state: FSMContext):
+async def test2_state26(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -512,7 +512,7 @@ async def state26(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer27)
-async def state27(message: types.Message, state: FSMContext):
+async def test2_state27(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -530,7 +530,7 @@ async def state27(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer28)
-async def state28(message: types.Message, state: FSMContext):
+async def test2_state28(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -548,7 +548,7 @@ async def state28(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer29)
-async def state29(message: types.Message, state: FSMContext):
+async def test2_state29(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -566,7 +566,7 @@ async def state29(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer30)
-async def state30(message: types.Message, state: FSMContext):
+async def test2_state30(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -584,7 +584,7 @@ async def state30(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer31)
-async def state31(message: types.Message, state: FSMContext):
+async def test2_state31(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -602,7 +602,7 @@ async def state31(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer32)
-async def state32(message: types.Message, state: FSMContext):
+async def test2_state32(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -620,7 +620,7 @@ async def state32(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer33)
-async def state33(message: types.Message, state: FSMContext):
+async def test2_state33(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -638,7 +638,7 @@ async def state33(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer34)
-async def state34(message: types.Message, state: FSMContext):
+async def test2_state34(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -656,7 +656,7 @@ async def state34(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer35)
-async def state35(message: types.Message, state: FSMContext):
+async def test2_state35(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -674,7 +674,7 @@ async def state35(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer36)
-async def state36(message: types.Message, state: FSMContext):
+async def test2_state36(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -692,7 +692,7 @@ async def state36(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer37)
-async def state37(message: types.Message, state: FSMContext):
+async def test2_state37(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -710,7 +710,7 @@ async def state37(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer38)
-async def state38(message: types.Message, state: FSMContext):
+async def test2_state38(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -728,7 +728,7 @@ async def state38(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer39)
-async def state39(message: types.Message, state: FSMContext):
+async def test2_state39(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
@@ -746,7 +746,7 @@ async def state39(message: types.Message, state: FSMContext):
     await test_2.next()
 
 @dp.message_handler(state=test_2.answer40)
-async def state40(message: types.Message, state: FSMContext):
+async def test2_state40(message: types.Message, state: FSMContext):
     global cnt
     answer = message.text.lower()
     flag = True
