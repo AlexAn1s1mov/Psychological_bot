@@ -18,13 +18,7 @@ from states.test_8_states import test_8
 cnt = 0
 name = 'test8'
 
-@dp.message_handler(text='Шкала самооценки')
-async def test8_e(message: types.Message):
-    await message.answer(f'Тест "{about_tests[name]["name"]}"')
-    await message.answer(f'О тесте: {about_tests[name]["info"]}')
 
-    await message.answer(f'В тесте {len(about_tests[name]["questions"])} вопросов \n'
-                         f'Приступить к тесту?', reply_markup=test8_enter)
 
 @dp.message_handler(text='Прервать прохождение теста 8', state='*')
 async def test8_answers_end(message: types.Message, state: FSMContext):
@@ -33,9 +27,12 @@ async def test8_answers_end(message: types.Message, state: FSMContext):
     await message.answer(f'Тест прерван', reply_markup=kb_test)
     await state.finish()
 
-@dp.message_handler(text='Приступить к тесту 8')
+@dp.message_handler(text='Шкала самооценки')
 async def test8_answers(message: types.Message):
     global cnt
+    await message.answer(f'Тест "{about_tests[name]["name"]}"')
+    await message.answer(f'О тесте: {about_tests[name]["info"]}')
+    await message.answer(f'В тесте {len(about_tests[name]["questions"])} вопросов')
     await message.answer(f'{about_tests[name]["instruction"]}')
     await message.answer(f'Вопрос №{cnt + 1}: {about_tests[name]["questions"][cnt]}', reply_markup=test8_menu)
     cnt += 1
