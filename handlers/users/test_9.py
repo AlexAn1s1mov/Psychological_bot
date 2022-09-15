@@ -21,11 +21,30 @@ name = 'test9'
 
 
 @dp.message_handler(text='Прервать прохождение теста 9', state='*')
-async def test9_answers_end(message: types.Message, state: FSMContext):
+async def test9_answers_end(message: types.Message):
+    await message.answer(f'Вы уверены?', reply_markup=ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text='Прервать тест'),
+            KeyboardButton(text='Продолжить тест 9')
+        ]
+    ],
+    resize_keyboard=True
+))
+
+@dp.message_handler(text='Прервать тест', state='*')
+async def test9_answers_end_(message: types.Message, state: FSMContext):
     global cnt
     cnt = 0
     await message.answer(f'Тест прерван', reply_markup=kb_test)
     await state.finish()
+
+@dp.message_handler(text='Продолжить тест 9', state='*')
+async def test9_answers_end__(message: types.Message, state: FSMContext):
+    global cnt
+    cnt-=1
+    await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}', reply_markup=test9_menu)
+    cnt+=1
 
 @dp.message_handler(text='Тест самообладания')
 async def test9_answers(message: types.Message):
@@ -54,7 +73,9 @@ async def state1(message: types.Message, state: FSMContext):
     await state.update_data(answer1 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer2)
 async def state2(message: types.Message, state: FSMContext):
@@ -72,7 +93,9 @@ async def state2(message: types.Message, state: FSMContext):
     await state.update_data(answer2 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer3)
 async def state3(message: types.Message, state: FSMContext):
@@ -90,7 +113,9 @@ async def state3(message: types.Message, state: FSMContext):
     await state.update_data(answer3 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer4)
 async def state4(message: types.Message, state: FSMContext):
@@ -108,7 +133,9 @@ async def state4(message: types.Message, state: FSMContext):
     await state.update_data(answer4 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer5)
 async def state5(message: types.Message, state: FSMContext):
@@ -126,7 +153,9 @@ async def state5(message: types.Message, state: FSMContext):
     await state.update_data(answer5 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer6)
 async def state6(message: types.Message, state: FSMContext):
@@ -144,7 +173,9 @@ async def state6(message: types.Message, state: FSMContext):
     await state.update_data(answer6 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer7)
 async def state7(message: types.Message, state: FSMContext):
@@ -162,7 +193,9 @@ async def state7(message: types.Message, state: FSMContext):
     await state.update_data(answer7 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer8)
 async def state8(message: types.Message, state: FSMContext):
@@ -180,7 +213,9 @@ async def state8(message: types.Message, state: FSMContext):
     await state.update_data(answer8 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer9)
 async def state9(message: types.Message, state: FSMContext):
@@ -198,7 +233,9 @@ async def state9(message: types.Message, state: FSMContext):
     await state.update_data(answer9 = answer)
     await message.answer(f'Вопрос №{cnt+1}: {about_tests[name]["questions"][cnt]}')
     cnt+=1
-    await test_9.next()
+    data = await state.get_state()
+    if data != None:
+        await test_9.next()
 
 @dp.message_handler(state=test_9.answer10)
 async def state10(message: types.Message, state: FSMContext):
@@ -230,5 +267,7 @@ async def state10(message: types.Message, state: FSMContext):
     await tests_results.update_result(id=id_, results=test9_score(list))
 
     await message.answer(f'{test9_score(list)}', reply_markup=kb_test)
-    cnt = 0
-    await state.finish()
+    data = await state.get_state()
+    if data != None:
+        cnt = 0
+        await state.finish()

@@ -1,14 +1,5 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-yes_no = ReplyKeyboardMarkup(
-    keyboard=[
-        [
-            KeyboardButton(text='Прервать тест'),
-            KeyboardButton(text='Продолжить тест')
-        ]
-    ],
-    resize_keyboard=True
-)
 
 test1_menu = ReplyKeyboardMarkup(
     keyboard=[
