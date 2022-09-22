@@ -51,10 +51,10 @@ async def test9_answers_end__(message: types.Message, state: FSMContext):
 @dp.message_handler(text='Тест самообладания')
 async def test9_answers(message: types.Message):
     global cnt
-    await message.answer(f'Тест "{about_tests[name]["name"]}"')
-    await message.answer(f'О тесте: {about_tests[name]["info"]}')
-    await message.answer(f'В тесте {len(about_tests[name]["questions"])} вопросов')
-    await message.answer(f'{about_tests[name]["instruction"]}')
+    await message.answer(f'<b>Тест "{about_tests[name]["name"]}"</b>\n'
+                         f'<b>О тесте:</b> {about_tests[name]["info"]}\n'
+                        f'<b>В тесте {len(about_tests[name]["questions"])} вопросов</b>\n'
+                        f'<i>{about_tests[name]["instruction"]}</i>\n')
     await message.answer(f'Вопрос №{cnt + 1}: {about_tests[name]["questions"][cnt]}', reply_markup=test9_menu)
     cnt += 1
     await test_9.first()

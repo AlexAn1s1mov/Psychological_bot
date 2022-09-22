@@ -16,7 +16,7 @@ kb_test = ReplyKeyboardMarkup(
         [KeyboardButton(text='Шкала отчуждения от учебы и выгорания')],
         [KeyboardButton(text='Шкала субъективного счастья и удовлетворенности жизнью')],
         [
-            KeyboardButton(text='/menu')
+            KeyboardButton(text='Главное меню')
         ]
     ],
     resize_keyboard=True
