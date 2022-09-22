@@ -18,26 +18,28 @@ cnt = 0
 name = 'test7'
 
 
-@dp.message_handler(text='Прервать прохождение теста 7', state='*')
+@dp.message_handler(text='Прервать прохождение теста ШДТС', state='*')
 async def test7_answers_end(message: types.Message):
     await message.answer(f'Вы уверены?', reply_markup=ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Прервать тест 7'),
-            KeyboardButton(text='Продолжить тест 7')
+            KeyboardButton(text='Прервать тест ШДТС')
+        ],
+        [
+            KeyboardButton(text='Продолжить тест ШДТС')
         ]
     ],
     resize_keyboard=True
 ))
 
-@dp.message_handler(text='Прервать тест 7', state='*')
+@dp.message_handler(text='Прервать тест ШДТС', state='*')
 async def test7_answers_end_(message: types.Message, state: FSMContext):
     global cnt
     cnt = 0
     await message.answer(f'Тест прерван', reply_markup=kb_test)
     await state.finish()
 
-@dp.message_handler(text='Продолжить тест 7', state='*')
+@dp.message_handler(text='Продолжить тест ШДТС', state='*')
 async def test7_answers_end__(message: types.Message, state: FSMContext):
     global cnt
     cnt-=1

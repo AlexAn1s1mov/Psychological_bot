@@ -8,7 +8,7 @@ test1_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Нет')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 1')
+            KeyboardButton(text='Прервать прохождение теста на канал восприятия')
         ]
     ],
     resize_keyboard=True
@@ -25,7 +25,7 @@ test2_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Совершенно верно')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 2')
+            KeyboardButton(text='Прервать прохождение теста ОУРЛТ')
         ]
     ],
     resize_keyboard=True
@@ -42,7 +42,7 @@ test3_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Почти всегда или постоянно')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 3')
+            KeyboardButton(text='Прервать прохождение теста ДПССЛ')
         ]
     ],
     resize_keyboard=True
@@ -64,7 +64,7 @@ test4_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='3', callback_data='7')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 4')
+            KeyboardButton(text='Прервать прохождение теста ОСАН')
         ]
     ],
     resize_keyboard=True
@@ -77,7 +77,7 @@ test5_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Нет'),
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 5')
+            KeyboardButton(text='Прервать прохождение теста Г. Айзенка')
         ]
     ],
     resize_keyboard=True
@@ -97,7 +97,7 @@ test6_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Очень сильно')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 6')
+            KeyboardButton(text='Прервать прохождение теста ШПНА')
         ]
     ],
     resize_keyboard=True
@@ -114,7 +114,7 @@ test7_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Почти всегда')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 7')
+            KeyboardButton(text='Прервать прохождение теста ШДТС')
         ]
     ],
     resize_keyboard=True
@@ -131,7 +131,7 @@ test8_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Полностью согласен(на)')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 8')
+            KeyboardButton(text='Прервать прохождение теста ШС')
         ]
     ],
     resize_keyboard=True
@@ -153,7 +153,7 @@ test9_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='полностью соответствует (1)')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 9')
+            KeyboardButton(text='Прервать прохождение теста самообладания')
         ]
     ],
     resize_keyboard=True
@@ -174,7 +174,7 @@ test10_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Каждый день')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 10')
+            KeyboardButton(text='Прервать прохождение теста МСПЗ')
         ]
     ],
     resize_keyboard=True
@@ -192,7 +192,7 @@ test11_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Да')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 11')
+            KeyboardButton(text='Прервать прохождение теста жизнестойкости')
         ]
     ],
     resize_keyboard=True
@@ -212,7 +212,7 @@ test12_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Совершенно согласен(на)')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 12')
+            KeyboardButton(text='Прервать прохождение теста ШОУВ')
         ]
     ],
     resize_keyboard=True
@@ -234,7 +234,7 @@ test13_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Полностью согласен')
         ],
         [
-            KeyboardButton(text='Прервать прохождение теста 13')
+            KeyboardButton(text='Прервать прохождение теста ШССУЖ')
         ]
     ],
     resize_keyboard=True
