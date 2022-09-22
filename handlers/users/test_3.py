@@ -24,14 +24,14 @@ async def test3_answers_end(message: types.Message):
     await message.answer(f'Вы уверены?', reply_markup=ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Прервать тест'),
+            KeyboardButton(text='Прервать тест 3'),
             KeyboardButton(text='Продолжить тест 3')
         ]
     ],
     resize_keyboard=True
 ))
 
-@dp.message_handler(text='Прервать тест', state='*')
+@dp.message_handler(text='Прервать тест 3', state='*')
 async def test3_answers_end_(message: types.Message, state: FSMContext):
     global cnt
     cnt = 0
